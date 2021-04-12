@@ -1,38 +1,159 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: Roboto;
+
+}
+
+.main-container{
+
+   padding: 1rem;
+   background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+
+.border{
+  border: 1px solid black;
+  border-radius: 8px;
+  
+}
+
+header{ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+
+}
+
+header img{
+height: 56px;
+}
+
+h1{
+
+  color: #fd4e02;
+  
+}
+
+.cards-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  width:90%;
+  height: calc( 100vh - 56px - 53px - 2rem);
+  padding: 1rem 0;
+  
+}
+
+.color-card-container{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
+  width: 49%;
+  height: 30%;
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+  
+}
+
+.color-card-container p:last-child{
+  text-align: right;
+}
+
+
+.color-card-container *{
+  opacity: 1;
+  transition: opacity ease 3s;
+}
+
+.message-on-hover{
+  position: absolute;
+  top: 2.5rem;
+  width: calc( 100% - 2rem) ;
+  text-align: center;
+  opacity: 0;
+  transition: opacity ease-in 1s;
+}
+.color-card-container:hover *{
+opacity: 0.2;
+}
+
+.color-card-container:hover .message-on-hover{
+  opacity: 1;
+}
+
+.color-code-container{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.color-code-container h3 {
+  margin: 8px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footer-container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin-bottom: 3px;
+  width: 90%;
+  margin: auto;
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.last-page{
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.next-page{
+  display: flex;
+}
+
+
+/* media query for tablet devices */
+
+@media only screen and (max-width:991px) {
+
+  .color-card-container p, .color-card-container h3{
+    margin: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+}
+
+/* media query for mobile devices */
+
+@media only screen and (max-width:767px) {
+  
+  header{
+    width: 100%;
+    flex-direction: column;
+
+  }
+
+  header img{
+    height: fit-content;
+    margin-bottom: 1rem;
+  }
+
+  .cards-container{
+    width: 100%;
+    height: fit-content;
+    
+  }
+
+  .color-card-container{
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
